@@ -86,6 +86,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Consulta\CLibros.resx">
       <DependentUpon>CLibros.cs</DependentUpon>
@@ -110,6 +111,11 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="DAL\Libros.sql" />
+    <None Include="Resources\kisspng-book-desktop-wallpaper-clip-art-story-books-5ae21458f01797.8525721615247657849834.jpg" />
+    <None Include="Resources\1600x900-librostexto.jpg" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -76,11 +76,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(493, 30);
+            this.button1.Image = global::RegistroDeBiblias.Properties.Resources.search;
+            this.button1.Location = new System.Drawing.Point(482, 11);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 61);
             this.button1.TabIndex = 4;
             this.button1.Text = "Buscar";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
