@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistroDeBiblias.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace RegistroDeBiblias
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RLibros rl = new RLibros();
+            rl.Show();
+
         }
     }
 }

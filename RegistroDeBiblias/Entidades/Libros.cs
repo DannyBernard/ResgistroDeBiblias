@@ -12,16 +12,16 @@ namespace RegistroDeBiblias.Entidades
         [Key]
         public int Id { set; get; } 
         public string Nombre { set; get; }
-        public string Descripcion { set; get; }
-        public string Sigla { set; get; }
+        public string Descricion { set; get; }
+        public string Siglas { set; get; }
         public string Tipo { set; get; }
 
         public Libros()
         {
             Id = 0;
             Nombre = string.Empty;
-            Descripcion = string.Empty;
-            Sigla = string.Empty;
+            Descricion = string.Empty;
+            Siglas = string.Empty;
             Tipo = string.Empty;
         }
     }
