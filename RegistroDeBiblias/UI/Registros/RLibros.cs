@@ -43,23 +43,123 @@ namespace RegistroDeBiblias.UI.Registros
 
         }
 
+        private bool Validar()
+             {
+            bool paso = true;
+
+            if (string.IsNullOrWhiteSpace(TipoTextBox.Text))
+            {
+                errorProvider1.SetError(TipoTextBox, "Campo esta vacio");
+                paso = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(SiglaTextBox.Text))
+            {
+                errorProvider1.SetError(SiglaTextBox, "Campo esta vacio");
+                paso = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(DescripcionTextBox.Text))
+            {
+                errorProvider1.SetError(DescripcionTextBox, "Campo esta vacio");
+                paso = false;
+            }
+            if (string.IsNullOrWhiteSpace(NombreTextBox.Text))
+            {
+                errorProvider1.SetError(NombreTextBox, "Campo esta vacio");
+                paso = false;
+            }
+            
+
+            return paso;
+ }
+        private bool EstaEnBaseDatos()
+        {
+            Libros libros = LibrosBll.Buscar((int)IDnumericUpDown.Value);
+            return (libros != null);
+        }
+
+        private void LlenarCampo(Libros libros)
+        {
+
+            IDnumericUpDown.Value = libros.Id;
+            NombreTextBox.Text = libros.Nombre;
+            DescripcionTextBox.Text = libros.Descricion;
+            SiglaTextBox.Text = libros.Siglas;
+            TipoTextBox.Text = libros.Tipo;
+        }
+
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+          errorProvider1.Clear();
             Libros libro;
          bool paso = false;
 
-            libro = LlenarClase();
-            if(IDnumericUpDown.Value == 0)
-            {
-                paso = LibrosBll.Guardar(libro);
+            if (!Validar())
+               return;
 
-                MessageBox.Show("Guardo");
+            libro = LlenarClase();
+
+            if (IDnumericUpDown.Value == 0)
+
+                paso = LibrosBll.Guardar(libro);
+            else
+            {
+                if (!EstaEnBaseDatos())
+                {
+                    MessageBox.Show(" no ha sido modificado");
+                    return;
+                }
+
+                paso = LibrosBll.Modificar(libro);
+               
+
+            }
+            Limpiar();
+
+            if (paso) 
+                MessageBox.Show("Guardo","Imfornacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            else
+            
+                MessageBox.Show("no guardo","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+              }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            int id;
+            int.TryParse(IDnumericUpDown.Text, out id);
+
+            if (LibrosBll.Eliminar(id))
+            {
+                MessageBox.Show("Eliminado con Exito");
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo Guardar");
+            }
+
+        }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            int id;
+            Libros libros = new Libros();
+            int.TryParse(IDnumericUpDown.Text, out id);
+
+            libros = LibrosBll.Buscar(id);
+
+            if(libros != null)
+            {
+                LlenarCampo(libros);
+                MessageBox.Show("Libro Encotrado");
 
             }
             else
             {
-                MessageBox.Show("no guardo");
-                }
+                MessageBox.Show("Libro no Exite");
+            }
+
 
         }
     }

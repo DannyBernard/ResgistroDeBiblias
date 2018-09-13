@@ -18,7 +18,7 @@ namespace RegistroDeBiblias.BLL
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.libros.Add(libro) != null)
+                if (contexto.Libros.Add(libro) != null)
                 {
                     contexto.SaveChanges();
                     paso = true;
@@ -57,8 +57,8 @@ namespace RegistroDeBiblias.BLL
             Contexto contexto = new Contexto();
             try
             {
-                Libros libro = contexto.libros.Find(id);
-                contexto.libros.Remove(libro);
+                Libros libro = contexto.Libros.Find(id);
+                contexto.Libros.Remove(libro);
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
@@ -79,7 +79,7 @@ namespace RegistroDeBiblias.BLL
             Libros libro = new Libros();
             try
             {
-                libro = contexto.libros.Find(id);
+                libro = contexto.Libros.Find(id);
                 contexto.Dispose();
 
             }
@@ -96,7 +96,7 @@ namespace RegistroDeBiblias.BLL
             Contexto contexto = new Contexto();
             try
             {
-                libros = contexto.libros.Where(expression).ToList();
+                libros = contexto.Libros.Where(expression).ToList();
                 contexto.Dispose();
             }
             catch (Exception)

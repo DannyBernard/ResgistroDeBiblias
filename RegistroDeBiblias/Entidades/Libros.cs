@@ -10,11 +10,11 @@ namespace RegistroDeBiblias.Entidades
     class Libros
     {
         [Key]
-        public int Id { set; get; } 
-        public string Nombre { set; get; }
-        public string Descricion { set; get; }
-        public string Siglas { set; get; }
-        public string Tipo { set; get; }
+        public int Id { get; set; } 
+        public string Nombre { get; set; }
+        public string Descricion { get; set; }
+        public string Siglas { get; set; }
+        public string Tipo { get; set; }
 
         public Libros()
         {

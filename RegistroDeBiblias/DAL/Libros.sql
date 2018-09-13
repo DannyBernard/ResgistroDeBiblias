@@ -11,3 +11,5 @@ Siglas varchar(10),
 Tipo varchar (20)
 )
 
+
+

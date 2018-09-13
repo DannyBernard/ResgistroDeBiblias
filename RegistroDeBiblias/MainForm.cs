@@ -1,4 +1,5 @@
-﻿using RegistroDeBiblias.UI.Registros;
+﻿using RegistroDeBiblias.UI.Consulta;
+using RegistroDeBiblias.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,12 @@ namespace RegistroDeBiblias
             RLibros rl = new RLibros();
             rl.Show();
 
+        }
+
+        private void verToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CLibros cl = new CLibros();
+            cl.Show();
         }
     }
 }
