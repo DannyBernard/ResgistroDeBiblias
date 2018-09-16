@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RegistroDeBiblias.Entidades
 {
-    class Libros
+   public class Libros
     {
         [Key]
         public int Id { get; set; } 

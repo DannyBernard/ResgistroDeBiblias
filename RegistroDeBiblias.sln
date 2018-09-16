@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroDeBiblias", "RegistroDeBiblias\RegistroDeBiblias.csproj", "{9D6779C3-AA8A-45A6-BBAA-35BD6CDE9651}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroDeBibliasTests", "RegistroDeBibliasTests\RegistroDeBibliasTests.csproj", "{9A50B1F5-503D-4B28-8BEB-171DAF65A015}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9D6779C3-AA8A-45A6-BBAA-35BD6CDE9651}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D6779C3-AA8A-45A6-BBAA-35BD6CDE9651}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D6779C3-AA8A-45A6-BBAA-35BD6CDE9651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A50B1F5-503D-4B28-8BEB-171DAF65A015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A50B1F5-503D-4B28-8BEB-171DAF65A015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A50B1F5-503D-4B28-8BEB-171DAF65A015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A50B1F5-503D-4B28-8BEB-171DAF65A015}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

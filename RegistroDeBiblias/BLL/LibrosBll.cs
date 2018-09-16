@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RegistroDeBiblias.BLL
 {
-    class LibrosBll
+   public class LibrosBll
     {
         public static bool Guardar(Libros libro)
         {
@@ -51,6 +51,12 @@ namespace RegistroDeBiblias.BLL
             }
             return paso;
         }
+
+        public static bool Eliminar(object id)
+        {
+            throw new NotImplementedException();
+        }
+
         public static bool Eliminar(int id)
         {
             bool paso = false;
